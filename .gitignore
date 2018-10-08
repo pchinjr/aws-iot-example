@@ -63,3 +63,6 @@ typings/
 #iot certificates
 caCerts/
 certs/
+
+#DS_Store
+.DS_Store
