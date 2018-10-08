@@ -61,8 +61,13 @@ typings/
 .next
 
 #iot certificates
-caCerts/
 certs/
 
 #DS_Store
 .DS_Store
+
+*.key
+*.crt
+*.pem.key
+*.pem.crt
+*.pem
