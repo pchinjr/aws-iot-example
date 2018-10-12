@@ -16,22 +16,10 @@ device
   .on('connect', function() {
     console.log('Connected');
     device.subscribe('topic_1'); 
-    device.publish('topic_3', JSON.stringify({message: 'Praise Cage'}));
+    device.publish('topic_2', JSON.stringify({message: 'Praise Cage'}));
   });
 
 device
   .on('message', function(topic, payload) {
     console.log('message', topic, payload.toString());
   });
-
-// device
-//   .on('connect', function() {
-//     console.log('connect');
-//     device.subscribe('topic_1');
-//     device.publish('topic_2', JSON.stringify({ test_data: 1}));
-//   });
-
-// device
-//   .on('message', function(topic, payload) {
-//     console.log('message', topic, payload.toString());
-//   });
