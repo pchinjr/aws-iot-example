@@ -12,14 +12,26 @@ const device = awsIot.device({
   host: process.env.HOST
 });
 
-// Connect
 device
   .on('connect', function() {
     console.log('Connected');
+    device.subscribe('topic_1'); 
+    device.publish('topic_3', JSON.stringify({message: 'Praise Cage'}));
   });
 
-// Error
 device
-  .on('error', function(error) {
-    console.log('Error: ', error);
+  .on('message', function(topic, payload) {
+    console.log('message', topic, payload.toString());
   });
+
+// device
+//   .on('connect', function() {
+//     console.log('connect');
+//     device.subscribe('topic_1');
+//     device.publish('topic_2', JSON.stringify({ test_data: 1}));
+//   });
+
+// device
+//   .on('message', function(topic, payload) {
+//     console.log('message', topic, payload.toString());
+//   });
